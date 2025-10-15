@@ -18,10 +18,10 @@ services:
       context: ./web
       dockerfile: Dockerfile
       args:
-        - NEXT_PUBLIC_API_URL=/api
+        - NEXT_PUBLIC_API_URL=https://df.198066.xyz/api
     container_name: deer-flow-frontend
     environment:
-      - NEXT_PUBLIC_API_URL=/api
+      - NEXT_PUBLIC_API_URL=https://df.198066.xyz/api
     env_file:
       - .env
     restart: unless-stopped
