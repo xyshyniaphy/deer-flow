@@ -1,8 +1,6 @@
 services:
   backend:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: xyshyniaphy/deer-flow-backend:latest
     container_name: deer-flow-backend
     # Remove the ports section to not expose to host
     env_file:
@@ -14,11 +12,7 @@ services:
       - deer-flow-network
 
   frontend:
-    build:
-      context: ./web
-      dockerfile: Dockerfile
-      args:
-        - NEXT_PUBLIC_API_URL=https://df.198066.xyz/api
+    image: xyshyniaphy/deer-flow-frontend:latest
     container_name: deer-flow-frontend
     environment:
       - NEXT_PUBLIC_API_URL=https://df.198066.xyz/api
